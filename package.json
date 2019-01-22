@@ -1,0 +1,51 @@
+{
+  "name": "fiat-rates",
+  "version": "1.0.0",
+  "description": "Currency Exchange Rates",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "lint": "./node_modules/.bin/eslint ./lib",
+    "test": "./node_modules/.bin/eslint ./lib && ./node_modules/.bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gegis/fiat-rates.git"
+  },
+  "keywords": [
+    "currency",
+    "exchange",
+    "rates",
+    "fiat",
+    "money",
+    "foreign",
+    "forex"
+  ],
+  "author": "Egidijus Gegeckas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gegis/fiat-rates/issues"
+  },
+  "homepage": "https://github.com/gegis/fiat-rates#readme",
+  "prettier": {
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "printWidth": 120
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.9.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "prettier": "^1.15.3"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "chai": "^4.2.0",
+    "lodash": "^4.17.11",
+    "mocha": "^5.2.0",
+    "moment": "^2.23.0",
+    "nedb": "^1.8.0",
+    "object-assign-deep": "^0.4.0"
+  }
+}
