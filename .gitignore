@@ -101,3 +101,6 @@ node_modules
 
 testApp
 coverage
+
+
+lib/tokens.js

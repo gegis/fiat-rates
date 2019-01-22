@@ -22,3 +22,6 @@ To implement a fallback to retrieve rates from:
 - https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.xml
 
 if https://exchangeratesapi.io is down.
+
+
+be aware - each new instance needs new path do db!!!
