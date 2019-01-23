@@ -104,6 +104,31 @@ from fixer.io. You can find pre-loaded cache data from different apis within `./
 ./data/rates.json
 ```
 
+Don't forget that different timezones and different providers update feeds at different times, therefore
+you can fine tune when current time is "today", by tweaking these settings:
+```ecmascript 6
+{
+  date: {
+    format: 'YYYY-MM-DD',
+    timezone: 'Europe/Berlin',
+    subtractMinutes: 60 * 17,
+  },
+}
+```
+For example, `fixer` and `currencylayer` is updated at GMT 00:05, `exchangeratesapi` only around 16:00 CET, so that's
+why the settings above mean that when in Berlin is 17:00 and more - return today's date, otherwise yesterday's date.
+
+Or for `fixer` and `currencylayer`:
+ ```ecmascript 6
+{
+  date: {
+    format: 'YYYY-MM-DD',
+    timezone: 'Europe/London',
+    subtractMinutes: 60,
+  },
+}
+```
+
 ## Default Options
 ```javascript
 const path = require('path');
@@ -160,6 +185,8 @@ module.exports = {
   },
   date: {
     format: 'YYYY-MM-DD',
+    timezone: 'Europe/Berlin',
+    subtractMinutes: 60 * 17,
   },
   primaryApi: 'exchangeratesapi',
   secondaryApi: null,
