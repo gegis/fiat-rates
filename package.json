@@ -19,7 +19,10 @@
     "fiat",
     "money",
     "foreign",
-    "forex"
+    "forex",
+    "exchangeratesapi.io",
+    "fixer.io",
+    "currencylayer.com"
   ],
   "author": "Egidijus Gegeckas",
   "license": "ISC",

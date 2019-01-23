@@ -4,11 +4,11 @@
 A module to get currency (fiat money) exchange rates, as well as convert the base value.
 
 It also caches and persists the cache for all results (as historical rates should never change),
-which decreases response times drastically, helps for api feeds like `https://exchangeratesapi.io`
-to exist for free and for feeds from `https://fixer.io` and `https://currencylayer.com` to stay under
+which decreases response times drastically, helps for api feeds like https://exchangeratesapi.io
+to exist for free and for feeds from https://fixer.io and https://currencylayer.com to stay under
 free tier (1000 requests/month for free).
 
-`primaryApi` by default is set to `'exchangeratesapi'`, which retrievs rates from European Central Bank (ECB),
+`primaryApi` by default is set to `'exchangeratesapi'`, which retrieves rates from European Central Bank (ECB),
 this feed is free for use, the only downside is that ECB does not update rates during the weekend.
 
 
@@ -26,7 +26,7 @@ npm i fiat-rates
 ```
 
 ## How to use
-```
+```javascript
 const simple = async () => {
   const fiatRates = new FiatRates();
   const fiatRatesConfig = fiatRates.getConfig();
