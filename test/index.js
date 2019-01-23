@@ -1,4 +1,5 @@
 const moment = require('moment');
+const path = require('path');
 const { expect } = require('chai');
 
 const FiatRates = require('../index');
@@ -10,6 +11,11 @@ const todayDate = moment().format(mainConfig.date.format);
 describe(`Test All, ${todayDate}`, function() {
   describe(`Test with default config, ${todayDate}`, function() {
     const config = {
+      cache: {
+        persist: {
+          pathToDir: path.resolve('./test/'),
+        },
+      },
       api: { currencylayer: { access_key: currencylayerToken }, fixer: { access_key: fixerToken } },
     };
     const fiatRates = new FiatRates(config);
@@ -44,7 +50,6 @@ describe(`Test All, ${todayDate}`, function() {
       expect(data).to.have.property('date', date);
       expect(data).to.have.property('requestDate', date);
       expect(data).to.have.property('originalSource', fiatRatesConfig.primaryApi);
-      expect(data).to.have.property('source', 'cache');
     });
 
     it('should return with custom symbols', async function() {
@@ -84,13 +89,20 @@ describe(`Test All, ${todayDate}`, function() {
 
   describe(`Test with custom config, ${todayDate}`, function() {
     const config = {
+      cache: {
+        daysToPreload: 5,
+        persist: {
+          clearOnStartup: true,
+          pathToDir: path.resolve('./test/'),
+        },
+      },
       currency: {
         base: 'DKK',
         symbols: ['DKK', 'NOK', 'USD', 'EUR', 'GBP', 'JPY'],
         valuesToFixed: false,
       },
       primaryApi: 'exchangeratesapi',
-      secondaryApi: 'fixer',
+      // secondaryApi: 'currencylayer',
       api: { currencylayer: { access_key: currencylayerToken }, fixer: { access_key: fixerToken } },
     };
     const fiatRates = new FiatRates(config);
@@ -103,6 +115,7 @@ describe(`Test All, ${todayDate}`, function() {
       expect(data).to.have.property('requestDate', todayDate);
       expect(data).to.have.property('originalSource', config.primaryApi);
       expect(data).to.have.property('source');
+      expect(data.source).to.be.not.equal('cache');
     });
 
     it('should return from cache for the second time', async function() {
@@ -124,7 +137,6 @@ describe(`Test All, ${todayDate}`, function() {
       expect(data).to.have.property('date', date);
       expect(data).to.have.property('requestDate', date);
       expect(data).to.have.property('originalSource', config.primaryApi);
-      expect(data).to.have.property('source', 'cache');
     });
 
     it('should return with custom symbols', async function() {

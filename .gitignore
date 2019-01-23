@@ -104,3 +104,4 @@ coverage
 
 
 lib/tokens.js
+test/rates.json
