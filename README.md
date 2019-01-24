@@ -279,3 +279,5 @@ If https://exchangeratesapi.io is down - implement a fallback to retrieve rates 
 - https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist-90d.xml
 - https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.xml
 
+If cache did not have requested symbol(s) - drop that date cache 
+(it can be done manually at the moment, by calling removeDateFromCache('2019-01-22')).
