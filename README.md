@@ -111,7 +111,7 @@ you can fine tune when current time is "today", by tweaking these settings:
   date: {
     format: 'YYYY-MM-DD',
     timezone: 'Europe/Berlin',
-    subtractMinutes: 60 * 17,
+    minutesToDelay: 60 * 17,
   },
 }
 ```
@@ -124,7 +124,7 @@ Or for `fixer` and `currencylayer`:
   date: {
     format: 'YYYY-MM-DD',
     timezone: 'Europe/London',
-    subtractMinutes: 60,
+    minutesToDelay: 60,
   },
 }
 ```
@@ -186,7 +186,7 @@ module.exports = {
   date: {
     format: 'YYYY-MM-DD',
     timezone: 'Europe/Berlin',
-    subtractMinutes: 60 * 17,
+    minutesToDelay: 60 * 17,
   },
   primaryApi: 'exchangeratesapi',
   secondaryApi: null,
