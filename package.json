@@ -16,6 +16,8 @@
     "currency",
     "exchange",
     "rates",
+    "latest",
+    "historical",
     "fiat",
     "money",
     "foreign",

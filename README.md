@@ -43,7 +43,7 @@ const simple = async () => {
   data = await fiatRates.get({ base: 'GBP' });
   console.log(data);
 
-  // Get currency rates data for 2019-01-21 with default config but different base - 'GBP'
+  // Get currency rates data for 2019-01-21 with default config but different base - 'NOK'
   data = await fiatRates.get({ date: '2019-01-21', base: 'NOK' });
   console.log(data);
 
