@@ -1,6 +1,6 @@
 {
   "name": "fiat-rates",
-  "version": "2.3.4",
+  "version": "2.3.5",
   "description": "Currency Exchange Rates",
   "main": "index.js",
   "scripts": {
